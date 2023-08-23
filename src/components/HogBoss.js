@@ -14,8 +14,6 @@ function HogBoss() {
     setEyeColor(e.target.value);
   }
 
-  console.log(offspring)
-
   return (
     <div>
       <input
