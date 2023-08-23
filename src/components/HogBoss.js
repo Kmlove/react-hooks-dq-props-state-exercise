@@ -7,7 +7,7 @@ function HogBoss() {
   const [eyeColor, setEyeColor] = useState("");
 
   const offSpringArray = offspring.map((pigObj) => {
-    return <BabyHog key={pigObj.id} eyeColor = {eyeColor} name={pigObj.name} hobby={pigObj.hobby}/>
+    return <BabyHog key={pigObj.id} weight={pigObj.weight} eyeColor = {eyeColor} name={pigObj.name} hobby={pigObj.hobby}/>
   })
 
   function handleChangeEyeColor(e) {
