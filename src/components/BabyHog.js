@@ -13,20 +13,37 @@ function BabyHog(props) {
     // perhaps something with e.target.name === "+"
   }
 
+  let img
+
+  switch(props.eyeColor){
+    case "blue":
+      img=BlueBaby
+      break;
+    case "sun":
+      img=SunBaby
+      break;
+    case "glowing":
+      img=GlowingBaby
+      break;
+    default:
+      img=normalBaby
+      break;
+  }
+
   console.log(props.hobby)
   return (
     <li className="hogbabies">
       <h1>{props.name}</h1>
       <h3>Weight:</h3>
       <h3>Hobby: {props.hobby}</h3>
-      <h4>Eye Color: {props.eyeColor}</h4>
+      <h4>Eye Color: {props.eyeColor} </h4>
 
       <button name="+">Increase Weight</button>
       <button name="-">Decrease Weight</button>
 
       <div className="hb-wrap">
         <img
-          src={normalBaby}
+          src={img}
           style={{ height: "200px" }}
           alt="MasterBlasterJrJr"
         />

@@ -4,7 +4,11 @@ import BabyHog from "./BabyHog";
 import offspring from "../data.js"
 
 function HogBoss() {
-  const [eyeColor, setEyeColor] = useState("blue");
+  const [eyeColor, setEyeColor] = useState("");
+
+  const offSpringArray = offspring.map((pigObj) => {
+    return <BabyHog key={pigObj.id} eyeColor = {eyeColor} name={pigObj.name} hobby={pigObj.hobby}/>
+  })
 
   function handleChangeEyeColor(e) {
     setEyeColor(e.target.value);
@@ -42,9 +46,7 @@ function HogBoss() {
         <img id="boss-blaster" src={Boss} alt="" />
       </div>
       <ul className="hoglist">
-        <BabyHog eyeColor = {eyeColor} name={offspring[0].name} hobby={offspring[0].hobby}/>
-        <BabyHog eyeColor = {eyeColor} name={offspring[1].name} hobby={offspring[1].hobby}/>
-        <BabyHog eyeColor = {eyeColor} name={offspring[2].name} hobby={offspring[2].hobby}/>
+        {offSpringArray}
       </ul>
     </div>
   );
