@@ -7,10 +7,9 @@ import GlowingBaby from "../assets/glowing-eyes.png";
 // is there a way we could associate eye color string values with images?
 // perhaps so we could do something along the lines of `eyeColorMapper['blue'] and get back the right image?`
 
-function BabyHog(props) {
+function BabyHog({weightProp, eyeColor, name, hobby}) {
   
-  const [weight, setWeight] = useState(props.weight)
-  
+  const [weight, setWeight] = useState(weightProp)
   
   function handleChangeWeight(e) {
     // how can we reuse this for both buttons?
@@ -24,7 +23,7 @@ function BabyHog(props) {
 
   let img
 
-  switch(props.eyeColor){
+  switch(eyeColor){
     case "blue":
       img=BlueBaby
       break;
@@ -41,10 +40,10 @@ function BabyHog(props) {
 
   return (
     <li className="hogbabies">
-      <h1>{props.name}</h1>
+      <h1>{name}</h1>
       <h3>Weight: {weight} tons</h3>
-      <h3>Hobby: {props.hobby}</h3>
-      <h4>Eye Color: {props.eyeColor} </h4>
+      <h3>Hobby: {hobby}</h3>
+      <h4>Eye Color: {eyeColor} </h4>
 
       <button onClick={handleChangeWeight} name="+">Increase Weight</button>
       <button onClick={handleChangeWeight} name="-">Decrease Weight</button>

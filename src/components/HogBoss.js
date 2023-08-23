@@ -4,10 +4,10 @@ import BabyHog from "./BabyHog";
 import offspring from "../data.js"
 
 function HogBoss() {
-  const [eyeColor, setEyeColor] = useState("");
+  const [eyeColor, setEyeColor] = useState("normal");
 
   const offSpringArray = offspring.map((pigObj) => {
-    return <BabyHog key={pigObj.id} weight={pigObj.weight} eyeColor = {eyeColor} name={pigObj.name} hobby={pigObj.hobby}/>
+    return <BabyHog key={pigObj.id} weightProp={pigObj.weight} eyeColor = {eyeColor} name={pigObj.name} hobby={pigObj.hobby}/>
   })
 
   function handleChangeEyeColor(e) {
