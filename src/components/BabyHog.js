@@ -16,9 +16,9 @@ function BabyHog(props) {
     // how can we reuse this for both buttons?
     // perhaps something with e.target.name === "+"
     if(e.target.name === "+"){
-      setWeight(weight + 1)
+      setWeight(weight => weight + 1)
     } else{
-      setWeight(weight - 1)
+      setWeight(weight => weight- 1)
     }
   }
 
